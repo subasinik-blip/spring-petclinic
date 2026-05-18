@@ -5,7 +5,8 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/subasinik-blip/spring-petclinic.git'
+                git branch: 'main',
+                url: 'https://github.com/subasinik-blip/spring-petclinic.git'
             }
         }
 
@@ -32,6 +33,5 @@ pipeline {
                 sh 'docker run -d -p 8082:8080 petclinic'
             }
         }
-
     }
 }
